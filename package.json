@@ -1,0 +1,43 @@
+{
+  "name": "mti-web",
+  "version": "3.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write \"src/**/*.{ts,tsx,css}\"",
+    "payload": "payload",
+    "migrate": "payload migrate",
+    "migrate:create": "payload migrate:create",
+    "migrate:down": "payload migrate:down",
+    "migrate:status": "payload migrate:status"
+  },
+  "dependencies": {
+    "next": "16.4.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "payload": "3.90.2",
+    "@payloadcms/next": "3.90.2",
+    "@payloadcms/db-postgres": "3.90.2",
+    "@payloadcms/richtext-lexical": "3.90.2",
+    "next-intl": "^3.26.0",
+    "zod": "^3.24.2",
+    "sharp": "^0.33.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.20.0",
+    "eslint-config-next": "16.4.0",
+    "postcss": "^8.5.1",
+    "prettier": "^3.5.0",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.3"
+  }
+}

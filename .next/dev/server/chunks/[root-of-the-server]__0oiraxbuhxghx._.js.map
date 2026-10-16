@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 106, "column": 0}, "map": {"version":3,"sources":["file:///E:/mti/src/i18n/routing.ts"],"sourcesContent":["import { defineRouting } from 'next-intl/routing';\nimport { createNavigation } from 'next-intl/navigation';\n\nexport const routing = defineRouting({\n  locales: ['ar', 'en'],\n  defaultLocale: 'ar',\n  localePrefix: 'as-needed'\n});\n\nexport const { Link, redirect, usePathname, useRouter, getPathname } = createNavigation(routing);\n"],"names":["routing","locales","defaultLocale","localePrefix","Link","redirect","usePathname","useRouter","getPathname"],"mappings":";;;;;;;;;;;;;;AAAA;AACA;;;AAEO,MAAMA,UAAU,IAAA,gKAAa,EAAC;IACnCC,SAAS;QAAC;QAAM;KAAK;IACrBC,eAAe;IACfC,cAAc;AAChB;AAEO,MAAM,EAAEC,IAAI,EAAEC,QAAQ,EAAEC,WAAW,EAAEC,SAAS,EAAEC,WAAW,EAAE,GAAG,IAAA,mQAAgB,EAACR"}},
+    {"offset": {"line": 137, "column": 0}, "map": {"version":3,"sources":["file:///E:/mti/src/proxy.ts"],"sourcesContent":["import createMiddleware from 'next-intl/middleware';\nimport { routing } from './i18n/routing';\n\nexport default createMiddleware(routing);\n\nexport const config = {\n  matcher: ['/((?!api|_next|_vercel|admin|.*\\\\..*).*)']\n};\n"],"names":["config","matcher"],"mappings":";;;;;;AAAA;AACA;;;uCAEe,IAAA,6JAAgB,EAAC,iIAAO;AAEhC,MAAMA,SAAS;IACpBC,SAAS;QAAC;KAA2C;AACvD"}}]
+}

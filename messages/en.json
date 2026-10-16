@@ -1,0 +1,100 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "theater": "Theater Solutions",
+    "seats": "Seats",
+    "telescopic": "Telescopic",
+    "options": "Options",
+    "projects": "Projects",
+    "downloads": "Downloads",
+    "contact": "Contact Us",
+    "consultation": "Get Consultation"
+  },
+  "brand": {
+    "title": "SHOMAN",
+    "subtitle": "THEATER & SEATING"
+  },
+  "common": {
+    "readMore": "Read More",
+    "viewDetails": "View Details",
+    "contactUs": "Contact Us",
+    "consultation": "Get Consultation",
+    "downloadPdf": "Download Specs (PDF)",
+    "officialRelease": "Official Release",
+    "inquiry": "Inquire About Project",
+    "next": "Next",
+    "prev": "Previous",
+    "close": "Close",
+    "switchLang": "عربي"
+  },
+  "home": {
+    "eyebrow": "01 · ENGINEERING EXCELLENCE",
+    "trust1": "Certified Expertise Since 2009",
+    "trust2": "BIFMA & CE Compliant",
+    "trust3": "Acoustic Absorption up to 86%",
+    "trust4": "+150 Projects Completed in MEA"
+  },
+  "about": {
+    "eyebrow": "02 · ABOUT & VISION",
+    "title": "Architectural Precision & Integrated Theater Engineering",
+    "story": "Founded in February 2009 by senior audiovisual and architectural acoustics consultants, SHOMAN has established 15+ years of leadership supplying premier auditoriums, sports arenas, and cultural theaters across Egypt and Saudi Arabia.",
+    "feat1Title": "Global Manufacturing Certifications",
+    "feat1Desc": "Strict compliance with BIFMA, CE, and NFPA fire and durability standards.",
+    "feat2Title": "Engineered Acoustic Absorption",
+    "feat2Desc": "Certified laboratory sound absorption testing up to 86% for pristine hall acoustics."
+  },
+  "theater": {
+    "eyebrow": "03 · TURNKEY SOLUTIONS",
+    "title": "Comprehensive Theater & Auditorium Systems",
+    "desc": "Delivering end-to-end architectural acoustics, motorized rigging, stage lighting, high-definition LED displays, and preventative maintenance."
+  },
+  "seats": {
+    "eyebrow": "04 · PERFORMER COLLECTION",
+    "title": "Auditorium & Theater Seating Systems",
+    "desc": "Architecturally crafted seating featuring silent gravity counterweight tip-up mechanisms and premium acoustic upholstery."
+  },
+  "telescopic": {
+    "eyebrow": "05 · A-SYSTEM TELESCOPIC",
+    "title": "Retractable Telescopic Bleacher Systems",
+    "desc": "Intelligent space flexibility for multipurpose arenas, sports facilities, and university lecture halls with premier safety standards."
+  },
+  "options": {
+    "eyebrow": "06 · CUSTOM SPECIFICATIONS",
+    "title": "Optional Features & Writing Tablets",
+    "desc": "Laser-etched numbering, ADA row markers, and stowed anti-panic writing tablets engineered into the armrests."
+  },
+  "projects": {
+    "eyebrow": "07 · TRACK RECORD",
+    "title": "Featured Architectural Project Portfolio",
+    "filterAll": "All Projects",
+    "filterAuditorium": "Auditoriums & Theaters",
+    "filterSports": "Sports Arenas",
+    "filterEducational": "Universities & Schools"
+  },
+  "downloads": {
+    "eyebrow": "08 · TECHNICAL SPECIFICATIONS",
+    "title": "Official Product Catalogs & Technical Datasheets"
+  },
+  "contact": {
+    "eyebrow": "09 · CONNECT WITH US",
+    "title": "Direct Contact with Egypt and Saudi Arabia Hubs",
+    "cairoTitle": "Egypt Hub (HQ - New Cairo)",
+    "riyadhTitle": "Saudi Arabia Hub (Riyadh)",
+    "addressLabel": "Address",
+    "phoneLabel": "Direct Phone",
+    "emailLabel": "Email",
+    "whatsappLabel": "WhatsApp",
+    "whatsappBtn": "Connect on WhatsApp →"
+  },
+  "footer": {
+    "aboutText": "Pioneering auditorium seating, theater solutions, and telescopic systems in Egypt and the Middle East since 2009.",
+    "colSections": "Navigation",
+    "colTheater": "Theater Solutions",
+    "colContact": "Direct Inquiries",
+    "contactDesc": "For technical specifications, tender packages, and architectural consultations:",
+    "privacy": "Privacy Policy",
+    "terms": "Terms & Conditions",
+    "rights": "All Rights Reserved © MTI 2026"
+  }
+}

@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="assets/shoman-favicon.svg">
+  <title>SHOMAN | حلول المسارح وتجهيز القاعات والمدرجات</title>
+  <meta name="description" content="SHOMAN - رائدة توريد وتركيب كراسي القاعات والمسارح وأنظمة المدرجات القابلة للطي وتجهيز المسارح في مصر والمملكة العربية السعودية منذ 2009.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Montserrat:wght@600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <!-- Smooth Scroll (Lenis) & Motion Engine (GSAP + ScrollTrigger) -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       UNIFIED SVG ICON SPRITE (Lucide Line Icons: stroke-width 1.75, 24x24)
+       ══════════════════════════════════════════════════════════════ -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;" aria-hidden="true">
+    <defs>
+      <linearGradient id="monogram-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#0284A8"/>
+        <stop offset="100%" stop-color="#1BB3D1"/>
+      </linearGradient>
+    </defs>
+    <!-- 1. Requested Core Line Icons -->
+    <symbol id="i-architecture" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-8h6v8"/><path d="M9 9h.01"/><path d="M15 9h.01"/>
+    </symbol>
+    <symbol id="i-audio" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+    </symbol>
+    <symbol id="i-lighting" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-1 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/>
+    </symbol>
+    <symbol id="i-visual" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="4" width="18" height="13" rx="2"/><path d="M7 21h10"/><path d="M12 17v4"/><path d="m10 8 5 2.5-5 2.5z"/>
+    </symbol>
+    <symbol id="i-mechanism" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+    </symbol>
+    <symbol id="i-care" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+    </symbol>
+    <symbol id="i-seat-number" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="4" x2="20" y1="9" y2="9"/><line x1="4" x2="20" y1="15" y2="15"/><line x1="10" x2="8" y1="3" y2="21"/><line x1="16" x2="14" y1="3" y2="21"/>
+    </symbol>
+    <symbol id="i-row-marker" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 2h6l3 7H6l3-7Z"/><path d="M12 9v13"/><path d="M9 22h6"/>
+    </symbol>
+    <symbol id="i-tablet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4"/><path d="M2 6h4"/><path d="M2 10h4"/><path d="M2 14h4"/><path d="M2 18h4"/><path d="M18.4 2.6a2.12 2.12 0 1 1 3 3L14 13l-4 1 1-4Z"/>
+    </symbol>
+    <symbol id="i-moveable" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="5 9 2 12 5 15"/><polyline points="9 5 12 2 15 5"/><polyline points="15 19 12 22 9 19"/><polyline points="19 9 22 12 19 15"/><line x1="2" x2="22" y1="12" y2="12"/><line x1="12" x2="12" y1="2" y2="22"/>
+    </symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+    </symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+    </symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+    </symbol>
+    <symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/>
+    </symbol>
+    <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/>
+    </symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>
+    </symbol>
+    <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+    </symbol>
+    <!-- Admin & Dashboard Line Icons -->
+    <symbol id="i-dashboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/>
+    </symbol>
+    <symbol id="i-armchair" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M19 9V6a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v3"/><path d="M3 11v5a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v2H7v-2a2 2 0 0 0-4 0Z"/><path d="M5 18v2"/><path d="M19 18v2"/>
+    </symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/>
+    </symbol>
+    <symbol id="i-theater" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m4 4 16 16"/><path d="M4 20 20 4"/><circle cx="12" cy="12" r="10"/>
+    </symbol>
+    <symbol id="i-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <rect width="16" height="20" x="4" y="2" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M8 10h.01"/><path d="M16 10h.01"/><path d="M8 14h.01"/><path d="M16 14h.01"/>
+    </symbol>
+    <symbol id="i-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>
+    </symbol>
+    <symbol id="i-settings" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+    </symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+    </symbol>
+    <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+    </symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>
+    </symbol>
+    <symbol id="i-scroll" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M8 21h12a2 2 0 0 0 2-2v-2H10v2a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v3h4"/><path d="M19 17V5a2 2 0 0 0-2-2H4"/>
+    </symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" x2="12" y1="9" y2="13"/><line x1="12" x2="12.01" y1="17" y2="17"/>
+    </symbol>
+    <symbol id="icon-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m9 18 6-6-6-6"/>
+    </symbol>
+    <symbol id="icon-chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m15 18-6-6 6-6"/>
+    </symbol>
+  </svg>
+
+  <!-- Top Real-time Scroll Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       PUBLIC SINGLE PAGE APPLICATION (#public-app)
+       ══════════════════════════════════════════════════════════════ -->
+  <div id="public-app">
+
+    <!-- Sticky Header -->
+    <header id="site-header">
+      <div class="container header-inner">
+        <!-- Modern Geometric MTI Monogram Logo -->
+        <a href="#home" class="brand-logo" aria-label="SHOMAN Home">
+          <img class="monogram" src="assets/shoman-mark.svg" alt="" aria-hidden="true">
+          <div class="brand-wordmark">
+            <span class="title">SHOMAN</span>
+            <span class="subtitle">THEATER &amp; SEATING</span>
+          </div>
+        </a>
+
+        <nav aria-label="Main Navigation">
+          <ul class="nav-links" id="desktop-nav-links">
+            <li class="nav-item"><a href="index.html" class="nav-link active" aria-current="page"><span class="nav-link-text" data-i18n="nav_home">الرئيسية</span></a></li>
+            <li class="nav-item"><a href="about.html" class="nav-link"><span class="nav-link-text" data-i18n="nav_about">من نحن</span></a></li>
+            <li class="nav-item dropdown" id="theater-nav-dropdown-item">
+              <a href="theater-solutions.html" class="nav-link" id="theater-dropdown-toggle" aria-haspopup="true" aria-expanded="false" role="button">
+                <span class="nav-link-text" data-i18n="nav_theater_title">حلول المسارح</span><span class="dropdown-caret" aria-hidden="true">▾</span>
+              </a>
+              <div class="dropdown-menu" id="header-dropdown-menu" role="menu" aria-label="حلول المسارح">
+                <!-- Dropdown items rendered dynamically -->
+              </div>
+            </li>
+            <li class="nav-item"><a href="seats.html" class="nav-link"><span class="nav-link-text">كراسي القاعات</span></a></li>
+            <li class="nav-item"><a href="projects.html" class="nav-link"><span class="nav-link-text" data-i18n="nav_projects">مشاريعنا</span></a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link"><span class="nav-link-text" data-i18n="nav_contact">تواصل معنا</span></a></li>
+            <li class="nav-sliding-indicator" id="nav-sliding-indicator" aria-hidden="true"></li>
+          </ul>
+        </nav>
+
+        <!-- Action tools -->
+        <div class="header-action-tools" style="display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0;">
+          <button class="lang-btn" id="lang-toggle-btn" data-target-lang="en" aria-label="Switch Language" title="Switch Language">
+            <span class="lang-track">
+              <span class="lang-option lang-en">EN</span>
+              <span class="lang-option lang-ar">عربي</span>
+            </span>
+          </button>
+          <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-drawer" role="dialog" aria-modal="true">
+      <div class="drawer-content">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-hairline); padding-bottom: 1rem;">
+          <a href="#home" class="brand-logo" style="text-decoration: none;">
+            <img class="monogram" src="assets/shoman-mark.svg" style="width: 36px; height: 30px;" alt="" aria-hidden="true">
+            <div class="brand-wordmark">
+              <span class="title" style="font-size: 1.1rem;">SHOMAN</span>
+              <span class="subtitle">THEATER &amp; SEATING</span>
+            </div>
+          </a>
+          <button id="close-mobile-drawer" style="padding: 0.5rem; color: var(--navy-900); display: flex; align-items: center; background: none; border: none; cursor: pointer;" aria-label="Close Navigation Drawer">
+            <svg class="icon icon-md"><use href="#i-close"></use></svg>
+          </button>
+        </div>
+        <ul class="drawer-nav-list">
+          <li><a href="index.html" class="drawer-nav-link active" data-i18n="nav_home">الرئيسية</a></li>
+          <li><a href="about.html" class="drawer-nav-link" data-i18n="nav_about">من نحن</a></li>
+          <li><a href="theater-solutions.html" class="drawer-nav-link" data-i18n="nav_theater">حلول المسارح</a></li>
+          <li><a href="seats.html" class="drawer-nav-link">كراسي القاعات</a></li>
+          <li><a href="telescopic.html" class="drawer-nav-link" data-i18n="nav_telescopic">المدرجات المتحركة</a></li>
+          <li><a href="options.html" class="drawer-nav-link" data-i18n="nav_options">الخيارات الإضافية</a></li>
+          <li><a href="projects.html" class="drawer-nav-link" data-i18n="nav_projects">مشاريعنا</a></li>
+          <li><a href="downloads.html" class="drawer-nav-link" data-i18n="nav_downloads">التحميلات</a></li>
+          <li><a href="contact.html" class="drawer-nav-link" data-i18n="nav_contact">تواصل معنا</a></li>
+        </ul>
+        <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border-hairline); display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 0.875rem; color: var(--text-muted); font-weight: 600;" data-i18n="lang_switch_label">اللغة / Language</span>
+          <button class="lang-btn" id="mobile-lang-toggle-btn" data-target-lang="en" aria-label="Switch Language" title="Switch Language">
+            <span class="lang-track">
+              <span class="lang-option lang-en">EN</span>
+              <span class="lang-option lang-ar">عربي</span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 01 · HERO SECTION (#home) -->
+    <section id="home">
+      <div class="hero-stage">
+        <div class="hero-slider-wrap" id="hero-slider-container">
+          <!-- Rendered dynamically from Data Store -->
+        </div>
+
+        <div class="hero-arrows">
+          <button class="hero-arrow-btn" id="hero-next-btn" aria-label="Next Slide">
+            <svg class="hero-arrow-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 12h14m-6-6 6 6-6 6" />
+            </svg>
+          </button>
+          <button class="hero-arrow-btn" id="hero-prev-btn" aria-label="Previous Slide">
+            <svg class="hero-arrow-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M19 12H5m7 7-7-7 7-7" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="container hero-controls">
+          <div class="hero-progress-bars" id="hero-progress-container" style="display: none;"></div>
+        </div>
+      </div>
+
+      <!-- Trust Strip -->
+      <div class="trust-strip">
+        <div class="container">
+          <div class="trust-grid" id="trust-metrics-grid">
+            <!-- Dynamically populated with count-up -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 · ABOUT US SECTION (#about) -->
+    <section id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div>
+            <div class="section-eyebrow" data-i18n="about_eyebrow">02 · من نحن ورؤيتنا</div>
+            <h2 class="section-title reveal-elem" data-i18n="about_title">الهندسة المعمارية الدقيقة وحلول المسارح المتكاملة</h2>
+            <div class="scale-line" style="width: 100px; height: 3px; background: var(--cyan-500); margin-bottom: 2rem;"></div>
+            <p class="about-story reveal-elem" data-i18n="about_story">
+              تأسست شركة SHOMAN في فبراير 2009 على يد نخبة من كبار مهندسي واستشاريي الصوتيات والمرئيات. على مدار أكثر من 15 عاماً، رسخت الشركة ريادتها في تزويد أرقى المسارح والقاعات الكبرى والاستادات الرياضية في مصر والمملكة العربية السعودية بحلول معمارية ميكانيكية دقيقة معتمدة دولياً.
+            </p>
+            <div class="about-features reveal-elem">
+              <div class="feature-card">
+                <h3 class="feature-title" data-i18n="feat_1_title">دقة تصنيع واعتمادات دولية</h3>
+                <p class="feature-desc" data-i18n="feat_1_desc">مطابقة لأعلى معايير BIFMA وCE وNFPA للسلامة والأمان ومقاومة الحريق.</p>
+              </div>
+              <div class="feature-card">
+                <h3 class="feature-title" data-i18n="feat_2_title">امتصاص صوتي متطور</h3>
+                <p class="feature-desc" data-i18n="feat_2_desc">اختبارات معملية موثقة بنسب امتصاص صوتي تصل إلى 86% لضمان نقاء الأداء الصوتي.</p>
+              </div>
+            </div>
+            <a href="#contact" class="btn btn-primary reveal-elem">
+              <span data-i18n="btn_contact_us">تواصل مع فرعك الأقرب</span>
+            </a>
+          </div>
+
+          <!-- Dual Branches Cards -->
+          <div class="branches-dual reveal-elem" id="about-branches-box">
+            <!-- Populated from Data Store -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 · THEATER SOLUTIONS SECTION (#theater) -->
+    <section id="theater">
+      <div class="container">
+        <div style="text-align: center; max-width: 760px; margin-inline: auto;">
+          <div class="section-eyebrow" data-i18n="theater_eyebrow">03 · خدمات متكاملة</div>
+          <h2 class="section-title reveal-elem" data-i18n="theater_title">حلول تجهيز المسارح وقاعات المؤتمرات</h2>
+          <p class="section-desc reveal-elem" style="margin-inline: auto;" data-i18n="theater_desc">
+            نقدم حلاً هندسياً شاملاً يبدأ من دراسة التصميم الصوتي والمعماري وحتى تجهيز أحدث أنظمة الإضاءة والميكانيزم والشاشات وباقات الصيانة السنوية.
+          </p>
+        </div>
+
+        <div class="theater-grid" id="theater-services-grid">
+          <!-- 6 Service Blocks generated dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 · PRODUCTS / AUDITORIUM SEATS (#products) -->
+    <section id="products">
+      <div class="container">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; margin-bottom: 3.5rem;">
+          <div>
+            <div class="section-eyebrow" data-i18n="seats_eyebrow">04 · PERFOMER COLLECTION</div>
+            <h2 class="section-title reveal-elem" data-i18n="seats_title">كراسي القاعات والمسارح (Auditorium Seating)</h2>
+            <div class="scale-line" style="width: 100px; height: 3px; background: var(--cyan-500);"></div>
+          </div>
+          <p class="section-desc reveal-elem" style="margin-bottom: 0; max-width: 480px;" data-i18n="seats_desc">
+            تصاميم معمارية فائقة الراحة والتحمل مزودة بآليات Tip-up ذاتية الرفع وخيارات عزل صوتي متطورة.
+          </p>
+        </div>
+
+        <div class="products-grid" id="products-cards-grid">
+          <!-- CH 001 to CH 010 populated dynamically -->
+        </div>
+
+        <!-- Load More / Load Less button -->
+        <div class="load-more-wrap">
+          <button class="btn btn-secondary reveal-elem" id="load-more-seats-btn">
+            <span id="load-more-btn-text">عرض المزيد من المقاعد</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 · TELESCOPIC SEATING (#telescopic) -->
+    <section id="telescopic">
+      <div class="container">
+        <div class="section-eyebrow" data-i18n="telescopic_eyebrow">05 · A-SYSTEM TELESCOPIC</div>
+        <h2 class="section-title reveal-elem" data-i18n="telescopic_title">أنظمة المدرجات القابلة للطي (Telescopic Seating)</h2>
+        <div class="scale-line" style="width: 100px; height: 3px; background: var(--cyan-500); margin-bottom: 2rem;"></div>
+        <p class="section-desc reveal-elem" data-i18n="telescopic_desc">
+          حلول مرنة ومبتكرة للمساحات متعددة الأغراض والصالات الرياضية والمدرجات الجامعية، مع أعلى تصنيفات الأمان والتحمل الهندسي.
+        </p>
+
+        <div class="telescopic-feature-layout">
+          <div class="telescopic-tabs-nav reveal-elem" id="telescopic-tabs-header" role="tablist" aria-label="Telescopic seating solutions">
+            <!-- Solution buttons generated dynamically -->
+          </div>
+
+          <div id="telescopic-panes-container" class="reveal-elem">
+            <!-- Active solution panel generated dynamically -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 · OPTIONAL FEATURES & TABLETS (#options) -->
+    <section id="options">
+      <div class="container">
+        <div style="text-align: center; max-width: 720px; margin-inline: auto; margin-bottom: 3.5rem;">
+          <div class="section-eyebrow" data-i18n="options_eyebrow">06 · الخيارات المخصصة</div>
+          <h2 class="section-title reveal-elem" data-i18n="options_title">الميزات الإضافية وأنواع الطاولات</h2>
+          <p class="section-desc reveal-elem" style="margin-inline: auto;" data-i18n="options_desc">
+            تجهيزات هندسية دقيقة من ترقيم المقاعد وصفحات الملاحظات وطاولات الكتابة المتطورة (Stowed / Housing / Anti-Panic).
+          </p>
+        </div>
+
+        <div class="options-grid" id="optional-features-grid">
+          <!-- Options rendered dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 · PROJECTS GALLERY (#projects) -->
+    <section id="projects">
+      <div class="container">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem;">
+          <div>
+            <div class="section-eyebrow" data-i18n="projects_eyebrow">07 · سجل الإنجازات</div>
+            <h2 class="section-title reveal-elem" data-i18n="projects_title">معرض المشاريع</h2>
+          </div>
+          <!-- Filter Chips -->
+          <div class="filter-chips reveal-elem" id="projects-filter-chips">
+            <button class="filter-chip active" data-filter="all" data-i18n="filter_all">جميع المشاريع</button>
+            <button class="filter-chip" data-filter="auditorium" data-i18n="filter_auditorium">المسارح والقاعات</button>
+            <button class="filter-chip" data-filter="sports" data-i18n="filter_sports">الصالات الرياضية</button>
+            <button class="filter-chip" data-filter="educational" data-i18n="filter_educational">الجامعات والمدارس</button>
+          </div>
+        </div>
+
+        <div class="projects-grid" id="projects-cards-grid">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 08 · DOWNLOADS (#downloads) -->
+    <section id="downloads">
+      <div class="container">
+        <div class="section-eyebrow" data-i18n="downloads_eyebrow">08 · التحميلات والملفات الفنية</div>
+        <h2 class="section-title reveal-elem" data-i18n="downloads_title">الكتالوجات وبيانات المواصفات الهندسية</h2>
+        <div class="scale-line" style="width: 100px; height: 3px; background: var(--cyan-500); margin-bottom: 2.5rem;"></div>
+
+        <div class="downloads-list" id="downloads-list-box">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 09 · CONTACT US SECTION (#contact) -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-eyebrow" data-i18n="contact_eyebrow">09 · قنوات التواصل</div>
+        <h2 class="section-title reveal-elem" data-i18n="contact_title">تواصل مباشرة مع مكاتبنا في مصر والسعودية</h2>
+        <div class="scale-line" style="width: 100px; height: 3px; background: var(--cyan-500); margin-bottom: 3.5rem;"></div>
+
+        <div class="contact-grid" id="contact-branches-grid">
+          <!-- Cairo & Riyadh branch cards generated dynamically. Cairo branch DOES NOT have WhatsApp as instructed! -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 · FOOTER -->
+    <footer id="site-footer">
+      <div class="container">
+        <div class="footer-columns">
+          <!-- Column 1: Brand & Contacts -->
+          <div>
+            <div style="display: flex; align-items: center; gap: 0.875rem; margin-bottom: 1.5rem;">
+              <img class="monogram" src="assets/shoman-mark-footer.svg" width="44" height="36" alt="" aria-hidden="true">
+              <div class="brand-wordmark">
+                <span class="title" style="font-size: 1.2rem; color: #FFFFFF;">SHOMAN</span>
+                <span class="subtitle" style="color: var(--cyan-500);">THEATER &amp; SEATING</span>
+              </div>
+            </div>
+            <p style="font-size: 0.875rem; color: var(--slate-500); line-height: 1.7; margin-bottom: 1.5rem;" data-i18n="footer_about_text">
+              الرواد في هندسة كراسي القاعات والمسارح والمدرجات المتحركة المعتمدة في الشرق الأوسط ومصر والخليج منذ 2009.
+            </p>
+            <!-- Social links: Facebook, X, Instagram as instructed! -->
+            <div class="footer-social-row" id="footer-social-links-box"></div>
+          </div>
+
+          <!-- Column 2: Quick Links -->
+          <div>
+            <h3 class="footer-col-title" data-i18n="footer_col2_title">روابط الأقسام</h3>
+            <ul class="footer-links-list">
+              <li><a href="about.html" class="footer-link" data-i18n="nav_about">من نحن</a></li>
+              <li><a href="seats.html" class="footer-link" data-i18n="nav_seats">كراسي القاعات</a></li>
+              <li><a href="telescopic.html" class="footer-link" data-i18n="nav_telescopic">المدرجات المتحركة</a></li>
+              <li><a href="options.html" class="footer-link" data-i18n="nav_options">الخيارات الإضافية</a></li>
+              <li><a href="downloads.html" class="footer-link" data-i18n="nav_downloads">التحميلات والمواصفات</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Theater Solutions -->
+          <div>
+            <h3 class="footer-col-title" data-i18n="footer_col3_title">حلول المسارح</h3>
+            <ul class="footer-links-list" id="footer-theater-services-links">
+              <!-- Services list -->
+            </ul>
+          </div>
+
+          <!-- Column 4: Contact Direct Mail -->
+          <div>
+            <h3 class="footer-col-title" data-i18n="footer_col4_title">راسلنا مباشرة</h3>
+            <p style="font-size: 0.875rem; color: var(--slate-500); line-height: 1.7; margin-bottom: 1rem;" data-i18n="footer_mail_text">
+              للاستشارات الفنية والمواصفات المعمارية وطلبات التوريد والمشاريع:
+            </p>
+            <a href="mailto:info@shoman.com" id="footer-main-email" style="display: inline-flex; align-items: center; gap: 0.75rem; font-family: var(--font-mono); font-size: 0.9375rem; font-weight: 700; color: var(--cyan-500); padding: 0.75rem 1rem; border: 1px solid rgba(2, 132, 168, 0.3); background: rgba(2, 132, 168, 0.08);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>info@shoman.com</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-bottom-bar">
+          <div>&copy; 2009 - <span id="current-year">2026</span> SHOMAN. All rights reserved.</div>
+          <div style="display: flex; gap: 1.5rem;">
+            <button id="legal-privacy-btn" style="color: var(--slate-500); cursor: pointer;" data-i18n="legal_privacy">سياسة الخصوصية</button>
+            <button id="legal-terms-btn" style="color: var(--slate-500); cursor: pointer;" data-i18n="legal_terms">الشروط والأحكام</button>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Side Drawer: Theater Service Details -->
+    <div id="service-side-drawer" class="side-drawer-overlay" role="dialog" aria-modal="true">
+      <div class="side-drawer-panel">
+        <div class="drawer-header">
+          <div>
+            <div id="service-drawer-subtitle" style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--cyan-500); letter-spacing: 0.1em; text-transform: uppercase;">THEATER SOLUTIONS</div>
+            <h2 id="service-drawer-title" class="drawer-header-title">اسم الخدمة</h2>
+          </div>
+          <button id="close-service-drawer" class="drawer-close-btn" aria-label="Close Drawer"><svg class="icon icon-sm"><use href="#i-close"></use></svg></button>
+        </div>
+        <div class="drawer-body" id="service-drawer-body">
+          <!-- Dynamic Sub-sections -->
+        </div>
+        <div class="drawer-footer">
+          <div style="display: flex; gap: 0.5rem;">
+            <button class="btn btn-secondary" id="service-prev-btn" style="padding: 0.5rem 1rem; display: inline-flex; align-items: center; gap: 4px;">
+              <svg class="icon icon-sm icon-flip-rtl"><use href="#icon-chevron-left"></use></svg>
+              <span>السابق</span>
+            </button>
+            <button class="btn btn-secondary" id="service-next-btn" style="padding: 0.5rem 1rem; display: inline-flex; align-items: center; gap: 4px;">
+              <span>التالي</span>
+              <svg class="icon icon-sm icon-flip-rtl"><use href="#icon-chevron-right"></use></svg>
+            </button>
+          </div>
+          <a href="#contact" class="btn btn-primary" id="service-contact-btn" style="padding: 0.5rem 1.25rem;">
+            <span data-i18n="btn_contact_us">تواصل معنا</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Side Drawer: Product Detail Drawer -->
+    <div id="product-side-drawer" class="side-drawer-overlay" role="dialog" aria-modal="true">
+      <div class="side-drawer-panel">
+        <div class="drawer-header">
+          <div>
+            <div id="product-drawer-code" style="font-family: var(--font-mono); font-size: 0.8125rem; color: var(--cyan-500); font-weight: 700;">MTI CH 001</div>
+            <h2 id="product-drawer-name" class="drawer-header-title">اسم الموديل</h2>
+          </div>
+          <button id="close-product-drawer" class="drawer-close-btn" aria-label="Close Product Drawer"><svg class="icon icon-sm"><use href="#i-close"></use></svg></button>
+        </div>
+        <div class="drawer-body" id="product-drawer-body">
+          <!-- Dynamic Product Details: specs, dimension diagrams, absorption, download -->
+        </div>
+        <div class="drawer-footer">
+          <button class="btn btn-secondary" id="download-product-spec-btn">
+            <span>تحميل المواصفات (PDF)</span>
+          </button>
+          <a href="#contact" class="btn btn-primary" id="product-contact-btn">
+            <span data-i18n="btn_contact_us">طلب استشارة</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="project-lightbox-modal" class="lightbox-modal" role="dialog" aria-modal="true">
+      <div class="lightbox-content">
+        <button id="close-lightbox-btn" style="position: absolute; top: 1rem; inset-inline-end: 1rem; background: var(--navy-900); color: #FFF; width: 36px; height: 36px; border: 1px solid var(--cyan-500); cursor: pointer; z-index: 10; display: flex; align-items: center; justify-content: center;"><svg class="icon icon-sm" style="color: #FFF;"><use href="#i-close"></use></svg></button>
+        <img id="lightbox-main-img" src="" alt="Project Image" class="lightbox-img">
+        <div class="lightbox-caption">
+          <div>
+            <div id="lightbox-sector" style="font-family: var(--font-mono); font-size: 0.95rem; color: var(--cyan-500); text-transform: uppercase;">SECTOR</div>
+            <h3 id="lightbox-title" style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 800;">اسم المشروع</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Legal Terms / Privacy Modal -->
+    <div id="legal-modal" class="lightbox-modal" role="dialog" aria-modal="true">
+      <div class="lightbox-content" style="max-width: 680px; padding: 2.5rem; background: var(--surface-white); color: var(--carbon-900);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-hairline); padding-bottom: 1rem;">
+          <h2 id="legal-modal-title" style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; color: var(--navy-900);">الشروط والأحكام</h2>
+          <button id="close-legal-modal" style="cursor: pointer; color: var(--navy-900); background: none; border: none; display: flex; align-items: center;"><svg class="icon icon-sm"><use href="#i-close"></use></svg></button>
+        </div>
+        <div id="legal-modal-body" style="font-size: 0.9375rem; line-height: 1.8; color: var(--carbon-700); max-height: 60vh; overflow-y: auto;">
+          <!-- Content populated dynamically -->
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- End #public-app -->
+
+
+  <!-- ══════════════════════════════════════════════════════════════
+       ADMIN APPLICATION (#admin-app)
+       ══════════════════════════════════════════════════════════════ -->
+  <div id="admin-app">
+
+    <!-- 10.2 / Admin 404 View: Shown on invalid login / lockout -->
+    <div id="admin-404-view">
+      <div class="error-404-box">
+        <div class="error-404-code">404</div>
+        <h1 style="font-family: var(--font-display); font-size: 1.75rem; font-weight: 800; margin-bottom: 1rem;">الصفحة غير موجودة</h1>
+        <p style="color: var(--slate-500); line-height: 1.7; margin-bottom: 2rem;">
+          عذراً، الرابط الذي تحاول الوصول إليه غير متاح أو تم نقله. يرجى التأكد من صحة العنوان.
+        </p>
+        <button class="btn btn-primary" id="admin-404-back-btn" style="width: 100%;">
+          <span>العودة للصفحة الرئيسية</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- 10.2 / Admin Login Screen -->
+    <div id="admin-login-view">
+      <div class="admin-login-card">
+        <div class="admin-login-header">
+          <div style="display: inline-block; width: 14px; height: 14px; background: var(--cyan-500); margin-bottom: 0.75rem;"></div>
+          <h1 style="font-family: var(--font-display); font-size: 1.75rem; font-weight: 800; color: var(--navy-900);">تسجيل الدخول الإداري</h1>
+          <p style="font-size: 0.875rem; color: var(--slate-700); margin-top: 0.25rem;">SHOMAN Admin Portal</p>
+        </div>
+        <form id="admin-login-form">
+          <div class="form-group">
+            <label class="form-label" for="admin-email-input">البريد الإلكتروني</label>
+            <input type="email" id="admin-email-input" class="form-input" required placeholder="name@shoman.com" autocomplete="username">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="admin-password-input">كلمة المرور</label>
+            <input type="password" id="admin-password-input" class="form-input" required placeholder="••••••••••••" autocomplete="current-password">
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+            <span>دخول لوحة التحكم</span>
+            <svg class="icon-flip-rtl" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- 10.3 / Admin Dashboard Main Workspace -->
+    <div id="admin-dashboard-view">
+      <!-- 14-Module Sidebar -->
+      <aside class="admin-sidebar">
+        <div class="admin-sidebar-header">
+          <svg width="30" height="25" viewBox="0 0 54 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M3 40V4H13V40H3Z" fill="#FFFFFF"/>
+            <path d="M15 40V14H25V40H15Z" fill="var(--cyan-500)"/>
+            <path d="M27 40V24H37V40H27Z" fill="#FFFFFF"/>
+            <path d="M39 40V4H49V40H39Z" fill="var(--cyan-500)"/>
+            <path d="M0 40H54V43H0Z" fill="#FFFFFF"/>
+          </svg>
+          <div>
+            <div style="font-family: var(--font-display); font-weight: 800; font-size: 1.05rem; letter-spacing: 0.08em; color: #FFFFFF;">MTI ADMIN</div>
+            <div style="font-family: var(--font-mono); font-size: 0.55rem; color: var(--cyan-500); letter-spacing: 0.1em;">CONTROL CENTER v2.1</div>
+          </div>
+        </div>
+        <ul class="admin-nav-list" id="admin-sidebar-nav">
+          <li class="admin-nav-item active" data-module="dashboard-home"><svg class="icon icon-sm" style="margin-inline-end: 8px;"><use href="#i-dashboard"></use></svg>Dashboard Home</li>
+          <li class="admin-nav-item" data-module="pages"><svg class="icon icon-sm" style="margin-inline-end: 8px;"><use href="#i-file"></use></svg>Pages</li>
+          <li class="admin-nav-item" data-module="products"><svg class="icon icon-sm" style="margin-inline-end: 8px;"><use href="#i-armchair"></use></svg>Products (Seats)</li>
+          <li class="admin-nav-item" data-module="optional-features"><svg class="icon icon-sm" style="margin-inline-end: 8px;"><use href="#i-sparkles"></use></svg>Optional Features</li>
+          <li class="admin-nav-item" data-module="telescopic"><svg class="icon icon-sm" style="margin-inline-end: 8px;"><use href="#i-architecture"></use></svg>Telescopic</li>
+          <li class="admin-nav-item" data-module="theater-solutions"><svg class="icon icon-sm" style="margin-inline-end: 8px;"><use href="#i-theater"></use></svg>Theater Solutions</li>
+          <li class="admin-nav-item" data-module="projects"><svg class="icon icon-sm" style="margin-inline-end: 8px;"><use href="#i-building"></use></svg>Projects</li>
+          <li class="admin-nav-item" data-module="downloads"><svg class="icon icon-sm" style="margin-inline-end: 8px;"><use href="#i-download"></use></svg>Downloads</li>
+          <li class="admin-nav-item" data-module="media"><svg class="icon icon-sm" style="margin-inline-end: 8px;"><use href="#i-image"></use></svg>Media Library</li>
+          <li class="admin-nav-item" data-module="global-settings"><svg class="icon icon-sm" style="margin-inline-end: 8px;"><use href="#i-settings"></use></svg>Global Settings</li>
+          <li class="admin-nav-item" data-module="navigation"><svg class="icon icon-sm" style="margin-inline-end: 8px;"><use href="#i-compass"></use></svg>Navigation &amp; Footer</li>
+          <li class="admin-nav-item" data-module="admin-users"><svg class="icon icon-sm" style="margin-inline-end: 8px;"><use href="#i-users"></use></svg>Admin Users</li>
+          <li class="admin-nav-item" data-module="languages"><svg class="icon icon-sm" style="margin-inline-end: 8px;"><use href="#i-globe"></use></svg>Languages</li>
+          <li class="admin-nav-item" data-module="audit-log"><svg class="icon icon-sm" style="margin-inline-end: 8px;"><use href="#i-scroll"></use></svg>Audit Log</li>
+        </ul>
+        <div style="padding: 1.25rem; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+          <button id="admin-reset-data-btn" style="width: 100%; padding: 0.5rem; font-size: 0.75rem; font-family: var(--font-mono); color: #EF4444; border: 1px solid rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.08); cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px;">
+            <svg class="icon icon-sm" style="color: #EF4444;"><use href="#i-alert"></use></svg>
+            <span>Reset Demo Data</span>
+          </button>
+        </div>
+      </aside>
+
+      <!-- Main Admin Stage -->
+      <main class="admin-main">
+        <header class="admin-topbar">
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <h2 id="admin-page-title" style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 800; color: var(--navy-900);">لوحة الإحصائيات (Dashboard Home)</h2>
+          </div>
+          <div style="display: flex; align-items: center; gap: 1.25rem;">
+            <button class="btn btn-secondary" id="admin-preview-site-btn" style="padding: 0.4rem 0.85rem; font-size: 0.8125rem;">
+              <span>معاينة الموقع ←</span>
+            </button>
+            <div style="display: flex; align-items: center; gap: 0.5rem; font-family: var(--font-mono); font-size: 0.8125rem;">
+              <span id="admin-user-email-display">admin@shoman.com</span>
+              <button id="admin-logout-btn" style="color: #EF4444; font-weight: 700; margin-inline-start: 0.75rem; cursor: pointer;">خروج</button>
+            </div>
+          </div>
+        </header>
+
+        <div class="admin-content-area" id="admin-module-container">
+          <!-- Dynamic Modules Content Loaded Here -->
+        </div>
+      </main>
+    </div>
+
+    <!-- Admin Edit Product Modal -->
+    <div id="admin-product-modal" class="admin-modal-overlay">
+      <div class="admin-modal">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-hairline); padding-bottom: 1rem; margin-bottom: 1.5rem;">
+          <h3 id="admin-product-modal-title" style="font-family: var(--font-display); font-size: 1.35rem; font-weight: 800;">تعديل المنتج</h3>
+          <button id="close-admin-product-modal" style="font-size: 1.25rem; cursor: pointer;">✕</button>
+        </div>
+        <form id="admin-product-form">
+          <input type="hidden" id="admin-prod-id">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label">كود الموديل (Code)</label>
+              <input type="text" id="admin-prod-code" class="form-input" required placeholder="CH 001">
+            </div>
+            <div class="form-group">
+              <label class="form-label">الحالة (Status)</label>
+              <select id="admin-prod-status" class="form-select">
+                <option value="published">منشور (Published)</option>
+                <option value="draft">مسودة (Draft)</option>
+                <option value="hidden">مخفي (Hidden)</option>
+              </select>
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label">الاسم بالعربية</label>
+              <input type="text" id="admin-prod-name-ar" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Name in English</label>
+              <input type="text" id="admin-prod-name-en" class="form-input" required>
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label">الخامة (AR / EN)</label>
+              <input type="text" id="admin-prod-mat-ar" class="form-input" placeholder="Polypropylene / Veneer">
+            </div>
+            <div class="form-group">
+              <label class="form-label">نسبة الامتصاص الصوتي %</label>
+              <input type="number" id="admin-prod-absorption" class="form-input" placeholder="78">
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label">الأبعاد (Dimensions mm)</label>
+              <input type="text" id="admin-prod-dimensions" class="form-input" placeholder="W:540 D:720 H:980 mm">
+            </div>
+            <div class="form-group">
+              <label class="form-label">آلية الرفع (Mechanism)</label>
+              <input type="text" id="admin-prod-mechanism" class="form-input" placeholder="Gravity Tip-Up">
+            </div>
+          </div>
+          <div style="display: flex; justify-content: flex-end; gap: 1rem; margin-top: 1.5rem; border-top: 1px solid var(--border-hairline); padding-top: 1rem;">
+            <button type="button" class="btn btn-secondary" id="cancel-admin-prod-modal">إلغاء</button>
+            <button type="submit" class="btn btn-primary"><span>حفظ التعديلات</span></button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Admin Add User Modal -->
+    <div id="admin-user-modal" class="admin-modal-overlay">
+      <div class="admin-modal" style="max-width: 500px;">
+        <h3 style="font-family: var(--font-display); font-size: 1.35rem; font-weight: 800; margin-bottom: 1rem;">إضافة مدير جديد (Add Admin)</h3>
+        <form id="admin-new-user-form">
+          <div class="form-group">
+            <label class="form-label">البريد الإلكتروني</label>
+            <input type="email" id="new-admin-email" class="form-input" required placeholder="manager@shoman.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label">كلمة المرور المؤقتة</label>
+            <input type="password" id="new-admin-password" class="form-input" required placeholder="••••••••••••">
+          </div>
+          <div style="display: flex; justify-content: flex-end; gap: 1rem; margin-top: 1.5rem;">
+            <button type="button" class="btn btn-secondary" id="cancel-admin-user-modal">إلغاء</button>
+            <button type="submit" class="btn btn-primary"><span>إضافة المدير</span></button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Live Preview Modal -->
+    <div id="admin-preview-modal" class="admin-modal-overlay">
+      <div class="admin-modal" style="max-width: 1200px; padding: 1.5rem; height: 95vh; display: flex; flex-direction: column;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-hairline); padding-bottom: 0.75rem; margin-bottom: 1rem;">
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <h3 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 800;">معاينة الموقع المباشرة (Live Preview)</h3>
+            <button class="btn btn-secondary" id="preview-toggle-mobile" style="padding: 0.25rem 0.75rem; font-size: 0.75rem;">
+              <span>تبديل: شاشة موبايل / ديسكتوب</span>
+            </button>
+          </div>
+          <button id="close-preview-modal" style="font-size: 1.25rem; cursor: pointer;">✕</button>
+        </div>
+        <div id="preview-frame-container" style="flex-grow: 1; border: 1px solid var(--border-hairline); background: #FFF; overflow: hidden; display: flex; justify-content: center;">
+          <iframe id="admin-preview-iframe" style="width: 100%; height: 100%; border: none;"></iframe>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- End #admin-app -->
+
+  <!-- Toast Notification -->
+  <!-- <div id="toast-notification">
+    <div style="width: 8px; height: 8px; background: var(--cyan-500);"></div>
+    <span id="toast-text">تم حفظ التغييرات بنجاح</span>
+  </div> -->
+
+  <!-- ══════════════════════════════════════════════════════════════
+       DATA ENGINE & JAVASCRIPT CONTROLLERS
+       ══════════════════════════════════════════════════════════════ -->
+  <script src="app.js"></script>
+</body>
+</html>
